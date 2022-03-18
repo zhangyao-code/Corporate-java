@@ -33,11 +33,11 @@ git clone git@coding.codeages.work:techbase/java-skeleton-project.git
 ## 目录结构
 
 ```
-|- skeleton-server  # 后端 API 项目目录
-|- skeleton-web     # Web 前端项目目录
-|- conf             # 项目开发、测试、生产环境配置
-|- docs             # 项目文档
-|- scripts          # 项目构建发布脚本
+|- server   # 后端 API 项目目录
+|- web      # Web 前端项目目录
+|- conf     # 项目开发、测试、生产环境配置
+|- docs     # 项目文档
+|- scripts  # 项目构建发布脚本
 ```
 
 ## 后端
@@ -93,7 +93,7 @@ git clone git@coding.codeages.work:techbase/java-skeleton-project.git
 
 ### 开发 IDE
 
-在 `IntelliJ IDEA` IDE 中，打开 `skeleton-server` 目录。
+在 `IntelliJ IDEA` IDE 中，打开 `java-skeleton-project/server` 目录。
 
 ::: tip
 建议使用 IntelliJ IDEA。VSCode 装上 Java 插件后能开发，但使用重构等功能时，有些不太好使。
@@ -107,7 +107,7 @@ git clone git@coding.codeages.work:techbase/java-skeleton-project.git
 
 ### API 开发测试
 
-见 `example/` 目录。
+见 `src/test/*.http` 文件。
 
 ## 前端
 
@@ -131,7 +131,7 @@ git clone git@coding.codeages.work:techbase/java-skeleton-project.git
 
 ### 开发 IDE
 
-在 WebStorm IDE 中，打开 `skeleton-web` 目录。
+在 WebStorm IDE 中，打开 `java-skeleton-project/web` 目录。
 
 ::: tip
 建议使用 WebStorm。VSCode 能用，但使用重构、代码智能提示时，有些不太好使。
@@ -140,7 +140,7 @@ git clone git@coding.codeages.work:techbase/java-skeleton-project.git
 ### 目录结构
 
 ```
-|- skeleton-web
+|- web
     |- admin        # 平台总管理后台
     |- pc           # 应用 PC 端
     |- h5           # 应用 H5 端
@@ -154,7 +154,7 @@ git clone git@coding.codeages.work:techbase/java-skeleton-project.git
 #### 启动前端开发服务
 
 ```
-cd skeleton-web/admin
+cd web/admin
 yarn serve
 ```
 
