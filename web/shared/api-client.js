@@ -16,8 +16,6 @@ client.interceptors.request.use((config) => {
     return Promise.reject(error);
 });
 
-
-
 client.interceptors.response.use((response) => {
     return response.data;
 }, (error) => {
@@ -45,6 +43,11 @@ client.interceptors.response.use((response) => {
             path: path,
             traceId: "",
         }
+    }
+
+    if (err.status === 401) {
+        const store = useAuthStore();
+        store.logout();
     }
 
     return Promise.reject(err);
