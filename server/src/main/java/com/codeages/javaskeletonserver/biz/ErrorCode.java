@@ -1,6 +1,5 @@
 package com.codeages.javaskeletonserver.biz;
 
-
 import com.codeages.javaskeletonserver.common.ErrorCodeInterface;
 
 public enum ErrorCode implements ErrorCodeInterface {
@@ -9,13 +8,13 @@ public enum ErrorCode implements ErrorCodeInterface {
 
     INVALID_ARGUMENT("参数不正确", 400),
 
-    INVALID_AUTHENTICATION("接口认证参数不正确", 400),
-
     INTERNAL_ERROR("服务器内部错误", 500),
 
     ACCESS_DENIED("无权访问", 403),
 
     UNAUTHORIZED("未登陆", 401),
+
+    INVALID_AUTHENTICATION("认证无效", 401),
 
     NOT_FOUND("对象不存在", 404),
 

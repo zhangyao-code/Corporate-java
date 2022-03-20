@@ -7,6 +7,7 @@ import com.codeages.javaskeletonserver.exception.AppError;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.MediaType;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
@@ -35,12 +36,10 @@ public class AuthTokenFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         try {
             String token = parseToken(request);
-            log.info("token {}", token);
             if (token != null) {
                 var userAuthedDto = userAuthService.auth(token);
                 var authUser = new AuthUser(userAuthedDto);
                 authUser.setIp(request.getRemoteAddr());
-                log.info("auth user {}", authUser);
                 var authentication = new UsernamePasswordAuthenticationToken(authUser, null, authUser.getAuthorities());
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -49,7 +48,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
         } catch (AppException e) {
             response.setCharacterEncoding("UTF-8");
-            response.setContentType("application/json");
+            response.setContentType(MediaType.APPLICATION_JSON_VALUE);
             response.setStatus(e.getStatus());
             response.getWriter().write(objectMapper.writeValueAsString(AppError.fromAppException(e, request)));
         }

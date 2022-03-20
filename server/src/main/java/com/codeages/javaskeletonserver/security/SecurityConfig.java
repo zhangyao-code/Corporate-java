@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Slf4j
@@ -37,6 +38,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
+    public AuthenticationEntryPoint unauthorizedHandler() {
+        return new AuthEntryPoint(objectMapper);
+    }
+
+    @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
@@ -47,13 +53,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and()
                 // 禁用 CSRF
                 .csrf().disable()
-                .exceptionHandling().accessDeniedHandler(authAccessDeniedHandler).and()
+                .exceptionHandling()
+                .accessDeniedHandler(authAccessDeniedHandler)
+                .authenticationEntryPoint(unauthorizedHandler()).and()
                 // 不需要session（不创建会话）
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
                 .antMatchers("/api-app/public/**").permitAll()
                 .antMatchers("/api-admin/public/**").permitAll()
-//                .antMatchers("/api-admin/**").permitAll()
                 // 其他都需要鉴权
                 .anyRequest().authenticated();
 
