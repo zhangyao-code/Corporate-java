@@ -1,7 +1,7 @@
 <template>
     <page-container title="用户">
         <template #extra>
-            <a-button type="primary" @click="creationVisible.value = true">新增</a-button>
+            <a-button type="primary" @click="creationVisible = true">新增</a-button>
         </template>
 
         <a-space direction="vertical" size="middle" style="width: 100%;">
@@ -100,7 +100,7 @@
     >
         <template #extra>
             <a-space>
-                <a-button @click="creationVisible.value = false">取消</a-button>
+                <a-button @click="creationVisible = false">取消</a-button>
                 <a-button type="primary" @click="submitCreate">提交</a-button>
             </a-space>
         </template>
