@@ -136,7 +136,6 @@ import { DownOutlined } from '@ant-design/icons-vue';
 import {useRouter} from "vue-router";
 import usePaginationQuery from "@shared/usePaginationQuery";
 import {userApi} from "@/api/user";
-import {onBeforeRouteUpdate} from "vue-router";
 import { Form, message } from 'ant-design-vue';
 
 const useForm = Form.useForm;
@@ -180,17 +179,11 @@ const searchState = reactive({
 const {
     rows: users,
     pagination,
-    pullQueryParams,
     fetchPaginationData,
     onSearchSubmit,
     onPaginationChange,
 } = usePaginationQuery(router, searchState, userApi.search);
 
-onBeforeRouteUpdate((to, from, next) => {
-    next();
-    pullQueryParams(to.query);
-    fetchPaginationData();
-});
 
 const creationVisible = ref(false);
 const creationState = reactive({

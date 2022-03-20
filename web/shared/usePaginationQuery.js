@@ -1,4 +1,5 @@
 import { reactive, ref, onMounted } from 'vue';
+import {onBeforeRouteUpdate} from 'vue-router';
 import _ from "lodash";
 
 export default function usePaginationQuery(router, searchForm, searchMethod) {
@@ -86,10 +87,15 @@ export default function usePaginationQuery(router, searchForm, searchMethod) {
         await fetchPaginationData();
     });
 
+    onBeforeRouteUpdate(async (to, from, next) => {
+        next();
+        pullQueryParams(to.query);
+        await fetchPaginationData();
+    });
+
     return {
         rows,
         pagination,
-        pullQueryParams,
         fetchPaginationData,
         onPaginationChange,
         onSearchSubmit,
