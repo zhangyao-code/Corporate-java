@@ -1,7 +1,7 @@
 <template>
     <page-container title="用户">
         <template #extra>
-            <a-button type="primary" @click="showCreate">新增</a-button>
+            <a-button type="primary" @click="creationVisible.value = true">新增</a-button>
         </template>
 
         <a-space direction="vertical" size="middle" style="width: 100%;">
@@ -93,14 +93,14 @@
     </a-drawer>
 
     <a-drawer
-        v-model:visible="createVisible"
+        v-model:visible="creationVisible"
         title="新增用户"
         placement="right"
         size="large"
     >
         <template #extra>
             <a-space>
-                <a-button @click="closeCreate">取消</a-button>
+                <a-button @click="creationVisible.value = false">取消</a-button>
                 <a-button type="primary" @click="submitCreate">提交</a-button>
             </a-space>
         </template>
@@ -111,16 +111,16 @@
             autocomplete="off"
         >
 
-            <a-form-item label="用户名" v-bind="createValidateInfos.username">
-                <a-input v-model:value="createState.username" />
+            <a-form-item label="用户名" v-bind="creationValidations.username">
+                <a-input v-model:value="creationState.username" />
             </a-form-item>
 
-            <a-form-item label="密码" v-bind="createValidateInfos.password">
-                <a-input-password v-model:value="createState.password" autocomplete="new-password" />
+            <a-form-item label="密码" v-bind="creationValidations.password">
+                <a-input-password v-model:value="creationState.password" autocomplete="new-password" />
             </a-form-item>
 
-            <a-form-item label="电子邮箱" v-bind="createValidateInfos.email">
-                <a-input v-model:value="createState.email" />
+            <a-form-item label="电子邮箱" v-bind="creationValidations.email">
+                <a-input v-model:value="creationState.email" />
             </a-form-item>
 
         </a-form>
@@ -131,13 +131,13 @@
 
 <script setup>
 
-import {reactive, ref} from "vue";
+import {reactive, ref, watch} from "vue";
 import { DownOutlined } from '@ant-design/icons-vue';
 import {useRouter} from "vue-router";
 import usePaginationQuery from "@shared/usePaginationQuery";
 import {userApi} from "@/api/user";
 import {onBeforeRouteUpdate} from "vue-router";
-import { Form } from 'ant-design-vue';
+import { Form, message } from 'ant-design-vue';
 
 const useForm = Form.useForm;
 const router = useRouter();
@@ -192,14 +192,14 @@ onBeforeRouteUpdate((to, from, next) => {
     fetchPaginationData();
 });
 
-const createVisible = ref(false);
-const createState = reactive({
+const creationVisible = ref(false);
+const creationState = reactive({
    username: "",
    email: "",
    password: "",
 });
 
-const createRules = reactive({
+const creationRules = reactive({
     username: [
         {
             required: true,
@@ -224,28 +224,26 @@ const createRules = reactive({
     ]
 });
 
-const {resetFields: resetCreateFields, validate: validateCreate, validateInfos: createValidateInfos} = useForm(createState, createRules, {
-    onValidate: (...args) => console.log(...args),
+const {resetFields: resetCreationFields, validate: validateCreation, validateInfos: creationValidations} = useForm(creationState, creationRules);
+
+watch(creationVisible, (visible) => {
+    if (!visible) {
+        resetCreationFields();
+    }
 });
-
-
-const showCreate = () => {
-    createVisible.value = true;
-}
-
-const closeCreate = () => {
-    createVisible.value = false;
-    resetCreateFields();
-}
 
 const submitCreate = async () => {
     try {
-        await validateCreate();
-        await userApi.create(createState);
-        createVisible.value = false;
+        await validateCreation();
     } catch(error) {
-        console.error("validate error", error);
+        return;
     }
+
+    await userApi.create(creationState);
+    message.success("新增用户成功");
+
+    creationVisible.value = false;
+    await fetchPaginationData();
 }
 
 const detailVisible = ref(false);
