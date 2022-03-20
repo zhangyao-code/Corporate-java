@@ -14,7 +14,7 @@ const routes = [
         path: '/welcome',
         name: 'welcome',
         meta: { title: '欢迎' },
-        component: () => import('../views/HomeView.vue'),
+        component: () => import('../views/WelcomePage.vue'),
       },
       {
         path: '/user',
@@ -33,13 +33,7 @@ const routes = [
             path: '/user/role',
             name: 'user_role',
             meta: { title: '角色' },
-            component: () => import('../views/HomeView.vue'),
-          },
-          {
-            path: '/user/login_log',
-            name: 'user_login_log',
-            meta: { title: '登录日志' },
-            component: () => import('../views/HomeView.vue'),
+            component: () => import('../views/UserRolePage.vue'),
           },
         ]
       },
@@ -48,13 +42,13 @@ const routes = [
         name: 'system',
         meta: { title: '系统' },
         component: BlankLayout,
-        redirect: '/system/index',
+        redirect: '/system/log',
         children: [
           {
-            path: '/system/index',
-            name: 'system_index',
+            path: '/system/log',
+            name: 'system_log',
             meta: { title: '系统日志' },
-            component: () => import('../views/HomeView.vue'),
+            component: () => import('../views/SystemLogPage.vue'),
           },
         ]
       },
