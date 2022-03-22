@@ -19,8 +19,9 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "username": "admin4",
-  "password": "admin"
+  "username": "admin100",
+  "password": "admin",
+  "email": "admin100@hello.world"
 }
 
 ### Lock user

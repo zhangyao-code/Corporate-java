@@ -94,7 +94,7 @@ public class UserAuthServiceImpl implements UserAuthService {
 
     private UserAuthedDto makeUserAuthedDto(User user, String token) {
         var userRoles = userRoleRepo.findAllByUserId(user.getId());
-        var userRoleIds = userRoles.stream().map(UserRole::getId).collect(Collectors.toList());
+        var userRoleIds = userRoles.stream().map(UserRole::getRoleId).collect(Collectors.toList());
 
         var roles = roleRepo.findAllByIdIn(userRoleIds).stream().map(Role::getName).collect(Collectors.toList());
 

@@ -59,8 +59,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 不需要session（不创建会话）
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
-                .antMatchers("/api-app/public/**").permitAll()
                 .antMatchers("/api-admin/public/**").permitAll()
+                .antMatchers("/api-app/public/**").permitAll()
+                .antMatchers("/api-admin/**").hasAuthority("ROLE_ADMIN")
                 // 其他都需要鉴权
                 .anyRequest().authenticated();
 
