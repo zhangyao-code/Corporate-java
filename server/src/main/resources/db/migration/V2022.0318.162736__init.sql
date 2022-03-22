@@ -33,6 +33,8 @@ CREATE TABLE `user_role` (
 
 INSERT INTO role(id, name, created_at, updated_at) VALUES(1, 'ROLE_USER', 1647570000000, 1647570000000);
 INSERT INTO role(id, name, created_at, updated_at) VALUES(2, 'ROLE_ADMIN', 1647570000000, 1647570000000);
+INSERT INTO role(id, name, created_at, updated_at) VALUES(3, 'ROLE_SUPER_ADMIN', 1647570000000, 1647570000000);
 
 INSERT INTO user(id, username, password, email, register_at, register_ip, login_at, login_ip, created_at, updated_at) VALUES(1, 'admin', '$2a$10$/bpl6SFBifLsSyOicTLF4O8FQJ1b.ilievII2TnbFixUB8NNkdCS6', 'hello@skeleton.java', 1647570000000, '127.0.0.1', 1647570000000, '127.0.0.1', 1647570000000, 1647570000000);
 INSERT INTO user_role(user_id, role_id, created_at, updated_at) VALUES(1, 2, 1647570000000, 1647570000000);
+INSERT INTO user_role(user_id, role_id, created_at, updated_at) VALUES(1, 3, 1647570000000, 1647570000000);

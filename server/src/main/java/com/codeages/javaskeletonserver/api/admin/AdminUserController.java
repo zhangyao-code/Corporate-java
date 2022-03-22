@@ -12,7 +12,10 @@ import com.codeages.javaskeletonserver.common.PagerResponse;
 import com.codeages.javaskeletonserver.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.security.RolesAllowed;
 
 @Slf4j
 @RestController
@@ -25,6 +28,7 @@ public class AdminUserController {
         this.userService = userService;
     }
 
+    @RolesAllowed("ROLE_SUPER_ADMIN")
     @PostMapping("/create")
     public UserDto create(@RequestBody UserCreateParams params) {
         return userService.create(params);
