@@ -1,10 +1,11 @@
 <template>
     <pro-layout
         :locale="locale"
-        v-bind="layoutConf"
         v-model:openKeys="state.openKeys"
         v-model:collapsed="state.collapsed"
         v-model:selectedKeys="state.selectedKeys"
+        :menu-data="menuData"
+        v-bind="layoutConf"
     >
         <template #rightContentRender>
             <span v-if="store.user" style="color: #fff">您好，{{ store.user.username }}</span>
@@ -16,7 +17,7 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue';
+import { ref, reactive, watch } from 'vue';
 import {useRouter} from 'vue-router';
 import { getMenuData, clearMenuItem } from '@ant-design-vue/pro-layout';
 import {useAuthStore} from "@shared/store/useAuthStore";
@@ -30,16 +31,24 @@ const { menuData } = getMenuData(clearMenuItem(router.getRoutes()));
 const state = reactive({
     collapsed: false, // default value
     openKeys: [],
-    selectedKeys: ['/welcome'],
-})
-const layoutConf = reactive({
+    selectedKeys: [],
+});
+
+const layoutConf = ref({
     title: 'Java Skeleton Admin',
     navTheme: 'light',
     headerTheme: 'dark',
     layout: 'mix',
     splitMenus: false,
-    menuData,
 });
+
+watch(router.currentRoute, () => {
+    const matched = router.currentRoute.value.matched.concat()
+    state.selectedKeys = matched.filter(r => r.name !== 'index').map(r => r.path)
+    state.openKeys = matched.filter(r => r.path !== router.currentRoute.value.path).map(r => r.path)
+}, {
+    immediate: true,
+})
 
 const onLogout = () => {
     store.logout();

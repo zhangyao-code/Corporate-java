@@ -9,10 +9,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.0"
 
-"@ant-design-vue/pro-layout@^3.2.0-rc.0":
-  version "3.2.0-rc.0"
-  resolved "https://registry.npmmirror.com/@ant-design-vue/pro-layout/-/pro-layout-3.2.0-rc.0.tgz#88aac22aff12efa4b2d0ba7aa4264aef156e65fb"
-  integrity sha512-WgHjrgjfUir1/0EacNKeVc2e7vC3OJfZH3gKlcjUddvBIpyEGLC8nKUmois7wBeCpGdTn2SgAQwFGZexQ2YJbw==
+"@ant-design-vue/pro-layout@^3.2.0-rc.1":
+  version "3.2.0-rc.1"
+  resolved "https://registry.npmmirror.com/@ant-design-vue/pro-layout/-/pro-layout-3.2.0-rc.1.tgz#9416c69ad809f2c84623426b00841b8a256ee4d6"
+  integrity sha512-U8oA/K0XTnHQ+c69PMG7Ys1ls0qf8h0q3JsJg+Uq+owC/RRD6dF091h0IymOK2NWEm+JYgwlZkw69VpnGqDQlw==
   dependencies:
     "@ant-design/icons-vue" "^6.0.1"
     ant-design-vue "^3.1.0-rc.0"

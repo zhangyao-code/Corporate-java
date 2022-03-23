@@ -5,7 +5,7 @@ import BlankLayout from "@/layouts/BlankLayout";
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'index',
     meta: {title: 'Home'},
     component: BasicLayout,
     redirect: '/welcome',
