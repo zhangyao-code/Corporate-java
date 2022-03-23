@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import BasicLayout from "@/layouts/BasicLayout";
 import BlankLayout from "@/layouts/BlankLayout";
+import config from "@/config";
 
 const routes = [
   {
@@ -65,6 +66,14 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = to.meta.title + " | " + config.name;
+  }
+
+  next();
+});
 
 export default router

@@ -21,6 +21,7 @@ import { ref, reactive, watch } from 'vue';
 import {useRouter} from 'vue-router';
 import { getMenuData, clearMenuItem } from '@ant-design-vue/pro-layout';
 import {useAuthStore} from "@shared/store/useAuthStore";
+import config from "@/config";
 
 const store = useAuthStore();
 const locale = (i18n) => i18n;
@@ -35,7 +36,7 @@ const state = reactive({
 });
 
 const layoutConf = ref({
-    title: 'Java Skeleton Admin',
+    title: config.name,
     navTheme: 'light',
     headerTheme: 'dark',
     layout: 'mix',

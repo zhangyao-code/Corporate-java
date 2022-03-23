@@ -1,7 +1,7 @@
 <template>
     <div class="login-page">
         <a-card title="登录" :bordered="false" style="width: 400px">
-            <template #extra><span style="color: #999;">Java Skeleton Admin</span></template>
+            <template #extra><span style="color: #999;">{{ config.name }}</span></template>
             <a-form
                 :model="formState"
                 name="login"
@@ -40,6 +40,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
 import {useAuthStore} from "@shared/store/useAuthStore";
 import {authApi} from "@/api/auth";
 import {useRouter} from 'vue-router';
+import config from "@/config";
 
 const useForm = Form.useForm;
 const store = useAuthStore();
