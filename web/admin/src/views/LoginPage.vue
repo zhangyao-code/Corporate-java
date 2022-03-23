@@ -9,20 +9,14 @@
                 @finish="onFinish"
                 @finishFailed="onFinishFailed"
             >
-                <a-form-item
-                    name="username"
-                    :rules="[{ required: true, message: 'Please input your username!' }]"
-                >
+                <a-form-item name="username" v-bind="validations.username">
                     <a-input v-model:value="formState.username">
                         <template #prefix>
                             <UserOutlined  />
                         </template>
                     </a-input>
                 </a-form-item>
-                <a-form-item
-                    name="password"
-                    :rules="[{ required: true, message: 'Please input your password!' }]"
-                >
+                <a-form-item name="password" v-bind="validations.password">
                     <a-input-password v-model:value="formState.password">
                         <template #prefix>
                             <LockOutlined class="site-form-item-icon" />
@@ -41,12 +35,13 @@
 <script setup>
 
 import {reactive } from 'vue';
-import { message } from 'ant-design-vue';
+import {Form, message} from 'ant-design-vue';
 import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
 import {useAuthStore} from "@shared/store/useAuthStore";
 import {authApi} from "@/api/auth";
 import {useRouter} from 'vue-router';
 
+const useForm = Form.useForm;
 const store = useAuthStore();
 const router = useRouter();
 
@@ -55,15 +50,34 @@ const formState = reactive({
     password: '',
 });
 
+const formRules = reactive({
+    username: [
+        {
+            required: true,
+            message: "请输入用户名",
+        }
+    ],
+
+    password: [
+        {
+            required: true,
+            message: "请输入密码",
+        },
+    ]
+});
+
+const {validateInfos: validations} = useForm(formState, formRules);
+
+
+
 const onFinish = async (params) => {
     try {
         const loginedUser = await authApi.login(params);
         store.login(loginedUser);
+        await router.push({name: 'welcome'});
     } catch (err) {
-        console.error(err);
         message.error(err.message);
     }
-    await router.push({name: 'welcome'});
 };
 
 const onFinishFailed = (error) => {
@@ -72,7 +86,7 @@ const onFinishFailed = (error) => {
 
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .login-page {
     background: #f3f3f3;
     width: 100%;
