@@ -40,6 +40,7 @@ const layoutConf = ref({
     headerTheme: 'dark',
     layout: 'mix',
     splitMenus: false,
+    fixSiderbar: true,
 });
 
 watch(router.currentRoute, () => {
