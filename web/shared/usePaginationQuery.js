@@ -10,7 +10,7 @@ export default function usePaginationQuery(router, searchForm, searchMethod) {
         current: 1,
         pageSize: 20,
         total: 0,
-        pageSizeOptions: ['20', '50', '100'],
+        pageSizeOptions: ['10', '20', '50', '100'],
         showSizeChanger: true,
         showTotal: (total) => `共 ${total} 条`,
         showQuickJumper: true,
@@ -33,8 +33,8 @@ export default function usePaginationQuery(router, searchForm, searchMethod) {
     const buildQueryParams = () => {
         return {
             ...searchForm,
-            offset: (pagination.current - 1) * pagination.pageSize,
-            limit: pagination.pageSize
+            page: pagination.current - 1, // 后端接口 page 从 0 开始计数
+            size: pagination.pageSize
         }
     }
 

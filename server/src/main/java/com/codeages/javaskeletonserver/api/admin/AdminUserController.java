@@ -7,12 +7,12 @@ import com.codeages.javaskeletonserver.biz.user.dto.UserSearchParams;
 import com.codeages.javaskeletonserver.biz.user.service.UserService;
 import com.codeages.javaskeletonserver.common.IdPayload;
 import com.codeages.javaskeletonserver.common.OkResponse;
-import com.codeages.javaskeletonserver.common.PagerRequest;
 import com.codeages.javaskeletonserver.common.PagerResponse;
 import com.codeages.javaskeletonserver.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.RolesAllowed;
@@ -53,9 +53,7 @@ public class AdminUserController {
     }
 
     @GetMapping("/search")
-    public PagerResponse<UserDto> search(UserSearchParams params) {
-        log.info("UserSearchParams {}", params);
-        var pager = new PagerRequest(params.getOffset(), params.getLimit(), Sort.by("createdAt").descending());
+    public PagerResponse<UserDto> search(UserSearchParams params, @PageableDefault(size = 20, sort = { "createdAt" }, direction = Sort.Direction.DESC) Pageable pager) {
         var users = userService.search(params, pager);
         return new PagerResponse<>(users, pager);
     }

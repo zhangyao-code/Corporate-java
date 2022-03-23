@@ -19,9 +19,9 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "username": "admin100",
+  "username": "admin025",
   "password": "admin",
-  "email": "admin100@hello.world"
+  "email": "admin025@hello.world"
 }
 
 ### Lock user
@@ -43,7 +43,7 @@ Authorization: Bearer {{token}}
 }
 
 ### Search user
-GET http://localhost:8080/api-admin/user/search?username=admin
+GET http://localhost:8080/api-admin/user/search?sort=id,asc&page=0&size=2
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
