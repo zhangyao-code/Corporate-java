@@ -1,5 +1,6 @@
 const { defineConfig } = require('@vue/cli-service');
 const path = require('path');
+const appConfig = require('./src/config');
 
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -14,6 +15,12 @@ module.exports = defineConfig({
     }
   },
   chainWebpack: config => {
+    config
+        .plugin('html')
+        .tap(args => {
+          args[0].title = appConfig.name;
+          return args;
+        })
     config.resolve.alias
         .set('@shared', path.join(__dirname, '../shared'));
   },

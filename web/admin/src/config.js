@@ -1,3 +1,3 @@
-export default {
+module.exports = {
     name: "Java Skeleton Admin"
 }
