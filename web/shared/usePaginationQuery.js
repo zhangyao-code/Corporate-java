@@ -5,6 +5,7 @@ import _ from "lodash";
 export default function usePaginationQuery(router, searchForm, searchMethod) {
 
     const rows = ref([]);
+    const sort = ref('');
 
     const pagination = reactive({
         current: 1,
@@ -28,13 +29,18 @@ export default function usePaginationQuery(router, searchForm, searchMethod) {
         if (query.size) {
             pagination.pageSize = _.toInteger(query.size);
         }
+
+        if (query.sort) {
+            sort.value = query.sort;
+        }
     }
 
     const buildQueryParams = () => {
         return {
             ...searchForm,
             page: pagination.current - 1, // 后端接口 page 从 0 开始计数
-            size: pagination.pageSize
+            size: pagination.pageSize,
+            sort: sort.value,
         }
     }
 
@@ -45,16 +51,17 @@ export default function usePaginationQuery(router, searchForm, searchMethod) {
     }
 
     const onPaginationChange = async (page, filters, sorter) => {
+        console.log("onPaginationChange", page, filters, sorter);
         let sortParams;
         if (sorter.field && sorter.order) {
-            sortParams = {sort: sorter.field + ',' + (sorter.order === 'ascend' ? 'asc' : 'desc') }
+            sort.value = sorter.field + ',' + (sorter.order === 'ascend' ? 'asc' : 'desc');
         } else {
-            sortParams = {sort: ''}
+            sort.value = '';
         }
 
         if (router) {
             const route = router.currentRoute.value;
-            const query = _.assign({}, route.query, {page: page.current, size: page.pageSize}, sortParams);
+            const query = _.assign({}, route.query, {page: page.current, size: page.pageSize}, {sort: sort.value});
             await router.push({name: route.name, query: query});
         } else {
             pagination.current = page.current;

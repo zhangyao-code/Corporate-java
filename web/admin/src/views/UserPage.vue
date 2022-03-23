@@ -160,10 +160,14 @@ const columns = [
     {
         title: '注册时间',
         key: 'registerAt',
+        dataIndex: 'registerAt',
+        sorter: true,
     },
     {
         title: '最后登录',
         key: 'loginAt',
+        dataIndex: 'loginAt',
+        sorter: true,
     },
     {
         title: '操作',
