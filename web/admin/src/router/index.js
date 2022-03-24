@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import BasicLayout from "@/layouts/BasicLayout";
 import BlankLayout from "@/layouts/BlankLayout";
 import config from "@/config";
+import {useAuthStore} from "@shared/store/useAuthStore";
 
 const routes = [
   {
@@ -71,6 +72,13 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   if (to.meta.title) {
     document.title = to.meta.title + " | " + config.name;
+  }
+
+  if (to.meta.requiredAuth === undefined || to.meta.requiredAuth === true) {
+    const store = useAuthStore();
+    if (!store.isLogin) {
+      next({name: "login"});
+    }
   }
 
   next();
