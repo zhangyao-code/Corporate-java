@@ -18,7 +18,7 @@
      await $`exit 1`;
  }
  
- const dir = await fs.promises.realpath(__dirname + '/../skeleton-server/src/main/resources/db/migration');
+ const dir = await fs.promises.realpath(__dirname + '/../server/src/main/resources/db/migration');
  cd(dir);
  
  const filename = `V${version}__${argv._[1]}.sql`;

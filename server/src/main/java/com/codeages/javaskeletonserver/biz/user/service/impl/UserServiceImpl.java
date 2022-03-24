@@ -2,6 +2,7 @@ package com.codeages.javaskeletonserver.biz.user.service.impl;
 
 import cn.hutool.core.util.StrUtil;
 import com.codeages.javaskeletonserver.biz.ErrorCode;
+import com.codeages.javaskeletonserver.biz.objectlog.service.ObjectLogService;
 import com.codeages.javaskeletonserver.biz.user.dto.UserCreateParams;
 import com.codeages.javaskeletonserver.biz.user.dto.UserDto;
 import com.codeages.javaskeletonserver.biz.user.dto.UserSearchParams;
@@ -33,12 +34,15 @@ public class UserServiceImpl implements UserService {
 
     private final SecurityContext context;
 
-    public UserServiceImpl(UserRepository repo, UserMapper mapper, Validator validator, PasswordEncoder encoder, SecurityContext context) {
+    private final ObjectLogService logService;
+
+    public UserServiceImpl(UserRepository repo, UserMapper mapper, Validator validator, PasswordEncoder encoder, SecurityContext context, ObjectLogService logService) {
         this.repo = repo;
         this.mapper = mapper;
         this.validator = validator;
         this.encoder = encoder;
         this.context = context;
+        this.logService = logService;
     }
 
     @Override
@@ -59,6 +63,11 @@ public class UserServiceImpl implements UserService {
         user.setRegisterIp(context.getUser().getIp());
 
         repo.save(user);
+
+        if (context.getUser() != null) {
+            logService.info("User", user.getId(), "create", "管理员创建用户");
+        }
+
         return mapper.toDto(user);
     }
 
@@ -68,6 +77,8 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "用户不存在"));
         user.setLocked(true);
         repo.save(user);
+
+        logService.info("User", id, "lock", "锁定用户");
     }
 
     @Override
@@ -76,6 +87,8 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "用户不存在"));
         user.setLocked(false);
         repo.save(user);
+
+        logService.info("User", id, "unlock", "解锁用户");
     }
 
     @Override
