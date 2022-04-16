@@ -21,7 +21,7 @@ const routes = [
       {
         path: '/user',
         name: 'user',
-        meta: { title: '用户' },
+        meta: { title: '用户', icon: 'UserOutlined' },
         component: BlankLayout,
         redirect: '/user/index',
         children: [
@@ -42,7 +42,7 @@ const routes = [
       {
         path: '/system',
         name: 'system',
-        meta: { title: '系统' },
+        meta: { title: '系统', icon: 'SettingOutlined' },
         component: BlankLayout,
         redirect: '/system/log',
         children: [
