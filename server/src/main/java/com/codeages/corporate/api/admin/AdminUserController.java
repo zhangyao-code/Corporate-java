@@ -1,14 +1,14 @@
-package com.codeages.javaskeletonserver.api.admin;
+package com.codeages.corporate.api.admin;
 
-import com.codeages.javaskeletonserver.biz.ErrorCode;
-import com.codeages.javaskeletonserver.biz.user.dto.UserCreateParams;
-import com.codeages.javaskeletonserver.biz.user.dto.UserDto;
-import com.codeages.javaskeletonserver.biz.user.dto.UserSearchParams;
-import com.codeages.javaskeletonserver.biz.user.service.UserService;
-import com.codeages.javaskeletonserver.common.IdPayload;
-import com.codeages.javaskeletonserver.common.OkResponse;
-import com.codeages.javaskeletonserver.common.PagerResponse;
-import com.codeages.javaskeletonserver.exception.AppException;
+import com.codeages.corporate.biz.ErrorCode;
+import com.codeages.corporate.biz.user.dto.UserCreateParams;
+import com.codeages.corporate.biz.user.dto.UserDto;
+import com.codeages.corporate.biz.user.dto.UserSearchParams;
+import com.codeages.corporate.biz.user.service.UserService;
+import com.codeages.corporate.common.IdPayload;
+import com.codeages.corporate.common.OkResponse;
+import com.codeages.corporate.common.PagerResponse;
+import com.codeages.corporate.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

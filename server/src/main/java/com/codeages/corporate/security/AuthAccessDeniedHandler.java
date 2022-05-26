@@ -1,8 +1,8 @@
-package com.codeages.javaskeletonserver.security;
+package com.codeages.corporate.security;
 
-import com.codeages.javaskeletonserver.biz.ErrorCode;
-import com.codeages.javaskeletonserver.exception.AppError;
-import com.codeages.javaskeletonserver.exception.AppException;
+import com.codeages.corporate.biz.ErrorCode;
+import com.codeages.corporate.exception.AppError;
+import com.codeages.corporate.exception.AppException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;

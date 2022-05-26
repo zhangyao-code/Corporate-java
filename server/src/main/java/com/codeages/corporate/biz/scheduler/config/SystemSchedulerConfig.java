@@ -1,7 +1,7 @@
-package com.codeages.javaskeletonserver.biz.scheduler.config;
+package com.codeages.corporate.biz.scheduler.config;
 
-import com.codeages.javaskeletonserver.biz.scheduler.service.CronJobDeclare;
-import com.codeages.javaskeletonserver.biz.scheduler.service.IntervalJobDeclare;
+import com.codeages.corporate.biz.scheduler.service.CronJobDeclare;
+import com.codeages.corporate.biz.scheduler.service.IntervalJobDeclare;
 
 import java.util.ArrayList;
 import java.util.List;

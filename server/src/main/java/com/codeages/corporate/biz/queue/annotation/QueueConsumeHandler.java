@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.biz.queue.annotation;
+package com.codeages.corporate.biz.queue.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

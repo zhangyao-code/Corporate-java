@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.exception;
+package com.codeages.corporate.exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.web.servlet.error.AbstractErrorController;

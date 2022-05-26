@@ -1,9 +1,9 @@
-package com.codeages.javaskeletonserver.api.admin;
+package com.codeages.corporate.api.admin;
 
 
-import com.codeages.javaskeletonserver.biz.user.dto.LoginParams;
-import com.codeages.javaskeletonserver.biz.user.dto.UserAuthedDto;
-import com.codeages.javaskeletonserver.biz.user.service.UserAuthService;
+import com.codeages.corporate.biz.user.dto.LoginParams;
+import com.codeages.corporate.biz.user.dto.UserAuthedDto;
+import com.codeages.corporate.biz.user.service.UserAuthService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

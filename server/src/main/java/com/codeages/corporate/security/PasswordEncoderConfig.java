@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.security;
+package com.codeages.corporate.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

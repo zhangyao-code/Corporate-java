@@ -1,6 +1,6 @@
-package com.codeages.javaskeletonserver.biz.queue.handler;
+package com.codeages.corporate.biz.queue.handler;
 
-import com.codeages.javaskeletonserver.biz.queue.annotation.QueueConsumeHandler;
+import com.codeages.corporate.biz.queue.annotation.QueueConsumeHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

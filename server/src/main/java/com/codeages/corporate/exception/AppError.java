@@ -1,6 +1,6 @@
-package com.codeages.javaskeletonserver.exception;
+package com.codeages.corporate.exception;
 
-import com.codeages.javaskeletonserver.biz.ErrorCode;
+import com.codeages.corporate.biz.ErrorCode;
 import lombok.Data;
 
 import javax.servlet.http.HttpServletRequest;

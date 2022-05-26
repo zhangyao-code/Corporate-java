@@ -1,6 +1,6 @@
-package com.codeages.javaskeletonserver.exception;
+package com.codeages.corporate.exception;
 
-import com.codeages.javaskeletonserver.common.ErrorCodeInterface;
+import com.codeages.corporate.common.ErrorCodeInterface;
 
 import javax.validation.ConstraintViolation;
 import java.util.Set;

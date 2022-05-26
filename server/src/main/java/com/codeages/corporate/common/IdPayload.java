@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.common;
+package com.codeages.corporate.common;
 
 import lombok.Data;
 

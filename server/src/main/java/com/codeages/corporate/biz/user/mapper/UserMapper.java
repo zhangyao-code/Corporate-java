@@ -1,8 +1,8 @@
-package com.codeages.javaskeletonserver.biz.user.mapper;
+package com.codeages.corporate.biz.user.mapper;
 
-import com.codeages.javaskeletonserver.biz.user.dto.UserCreateParams;
-import com.codeages.javaskeletonserver.biz.user.dto.UserDto;
-import com.codeages.javaskeletonserver.biz.user.entity.User;
+import com.codeages.corporate.biz.user.dto.UserCreateParams;
+import com.codeages.corporate.biz.user.dto.UserDto;
+import com.codeages.corporate.biz.user.entity.User;
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValueCheckStrategy;

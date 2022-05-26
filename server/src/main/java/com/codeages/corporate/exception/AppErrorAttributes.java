@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.exception;
+package com.codeages.corporate.exception;
 
 import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.web.servlet.error.DefaultErrorAttributes;

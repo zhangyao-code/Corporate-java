@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.biz.scheduler.service;
+package com.codeages.corporate.biz.scheduler.service;
 
 public interface SchedulerService {
 

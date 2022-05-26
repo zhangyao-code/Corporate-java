@@ -1,6 +1,6 @@
-package com.codeages.javaskeletonserver.biz.user.repository;
+package com.codeages.corporate.biz.user.repository;
 
-import com.codeages.javaskeletonserver.biz.user.entity.Role;
+import com.codeages.corporate.biz.user.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 

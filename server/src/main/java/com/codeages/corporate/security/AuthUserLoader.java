@@ -1,9 +1,9 @@
-package com.codeages.javaskeletonserver.security;
+package com.codeages.corporate.security;
 
-import com.codeages.javaskeletonserver.biz.user.entity.Role;
-import com.codeages.javaskeletonserver.biz.user.repository.RoleRepository;
-import com.codeages.javaskeletonserver.biz.user.repository.UserRepository;
-import com.codeages.javaskeletonserver.biz.user.repository.UserRoleRepository;
+import com.codeages.corporate.biz.user.entity.Role;
+import com.codeages.corporate.biz.user.repository.RoleRepository;
+import com.codeages.corporate.biz.user.repository.UserRepository;
+import com.codeages.corporate.biz.user.repository.UserRoleRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

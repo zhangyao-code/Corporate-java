@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.biz.user.entity;
+package com.codeages.corporate.biz.user.entity;
 
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;

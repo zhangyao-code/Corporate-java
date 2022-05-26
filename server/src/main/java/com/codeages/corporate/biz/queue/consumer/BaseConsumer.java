@@ -1,8 +1,8 @@
-package com.codeages.javaskeletonserver.biz.queue.consumer;
+package com.codeages.corporate.biz.queue.consumer;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
-import com.codeages.javaskeletonserver.biz.queue.handler.ConsumeHandlerRegistry;
+import com.codeages.corporate.biz.queue.handler.ConsumeHandlerRegistry;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.common.message.MessageExt;

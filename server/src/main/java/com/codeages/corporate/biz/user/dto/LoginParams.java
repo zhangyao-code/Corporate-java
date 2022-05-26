@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.biz.user.dto;
+package com.codeages.corporate.biz.user.dto;
 
 import lombok.Data;
 

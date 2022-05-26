@@ -1,6 +1,6 @@
-package com.codeages.javaskeletonserver.biz;
+package com.codeages.corporate.biz;
 
-import com.codeages.javaskeletonserver.common.ErrorCodeInterface;
+import com.codeages.corporate.common.ErrorCodeInterface;
 
 public enum ErrorCode implements ErrorCodeInterface {
 

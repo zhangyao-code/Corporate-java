@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.biz.objectlog.entity;
+package com.codeages.corporate.biz.objectlog.entity;
 
 import com.vladmihalcea.hibernate.type.json.JsonStringType;
 import lombok.Data;

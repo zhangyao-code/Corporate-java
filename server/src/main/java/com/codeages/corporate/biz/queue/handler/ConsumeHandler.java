@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.biz.queue.handler;
+package com.codeages.corporate.biz.queue.handler;
 
 public interface ConsumeHandler<T> {
     void handle(T payload);

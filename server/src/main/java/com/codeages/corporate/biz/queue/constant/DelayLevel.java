@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.biz.queue.constant;
+package com.codeages.corporate.biz.queue.constant;
 
 /**
  * 消息延迟时长

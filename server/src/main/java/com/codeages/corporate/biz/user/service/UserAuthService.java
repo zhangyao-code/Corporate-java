@@ -1,7 +1,7 @@
-package com.codeages.javaskeletonserver.biz.user.service;
+package com.codeages.corporate.biz.user.service;
 
-import com.codeages.javaskeletonserver.biz.user.dto.LoginParams;
-import com.codeages.javaskeletonserver.biz.user.dto.UserAuthedDto;
+import com.codeages.corporate.biz.user.dto.LoginParams;
+import com.codeages.corporate.biz.user.dto.UserAuthedDto;
 
 public interface UserAuthService {
 

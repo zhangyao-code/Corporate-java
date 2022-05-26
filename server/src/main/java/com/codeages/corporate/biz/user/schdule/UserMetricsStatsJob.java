@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.biz.user.schdule;
+package com.codeages.corporate.biz.user.schdule;
 
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.JobExecutionContext;

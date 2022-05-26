@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.biz.objectlog.service;
+package com.codeages.corporate.biz.objectlog.service;
 
 import java.util.Map;
 

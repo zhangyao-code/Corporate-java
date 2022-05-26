@@ -1,6 +1,6 @@
-package com.codeages.javaskeletonserver.exception;
+package com.codeages.corporate.exception;
 
-import com.codeages.javaskeletonserver.biz.ErrorCode;
+import com.codeages.corporate.biz.ErrorCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;

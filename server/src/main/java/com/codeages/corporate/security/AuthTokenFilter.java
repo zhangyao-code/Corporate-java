@@ -1,9 +1,9 @@
-package com.codeages.javaskeletonserver.security;
+package com.codeages.corporate.security;
 
 import cn.hutool.core.util.StrUtil;
-import com.codeages.javaskeletonserver.biz.user.service.UserAuthService;
-import com.codeages.javaskeletonserver.exception.AppException;
-import com.codeages.javaskeletonserver.exception.AppError;
+import com.codeages.corporate.biz.user.service.UserAuthService;
+import com.codeages.corporate.exception.AppException;
+import com.codeages.corporate.exception.AppError;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

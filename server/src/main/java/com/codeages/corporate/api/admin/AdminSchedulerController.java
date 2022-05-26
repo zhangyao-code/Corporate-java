@@ -1,8 +1,7 @@
-package com.codeages.javaskeletonserver.api.admin;
+package com.codeages.corporate.api.admin;
 
-import com.codeages.javaskeletonserver.biz.scheduler.service.SchedulerService;
-import com.codeages.javaskeletonserver.common.OkResponse;
-import org.quartz.SchedulerException;
+import com.codeages.corporate.biz.scheduler.service.SchedulerService;
+import com.codeages.corporate.common.OkResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

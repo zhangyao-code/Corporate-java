@@ -1,10 +1,8 @@
-package com.codeages.javaskeletonserver.biz.queue.handler;
+package com.codeages.corporate.biz.queue.handler;
 
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 @Component

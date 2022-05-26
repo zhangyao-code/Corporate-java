@@ -1,14 +1,14 @@
-package com.codeages.javaskeletonserver.biz.scheduler.service.impl;
+package com.codeages.corporate.biz.scheduler.service.impl;
 
 import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
-import com.codeages.javaskeletonserver.biz.ErrorCode;
-import com.codeages.javaskeletonserver.biz.scheduler.config.SystemSchedulerConfig;
-import com.codeages.javaskeletonserver.biz.scheduler.service.CronJobDeclare;
-import com.codeages.javaskeletonserver.biz.scheduler.service.IntervalJobDeclare;
-import com.codeages.javaskeletonserver.biz.scheduler.service.SchedulerService;
-import com.codeages.javaskeletonserver.exception.AppException;
+import com.codeages.corporate.biz.ErrorCode;
+import com.codeages.corporate.biz.scheduler.config.SystemSchedulerConfig;
+import com.codeages.corporate.biz.scheduler.service.CronJobDeclare;
+import com.codeages.corporate.biz.scheduler.service.IntervalJobDeclare;
+import com.codeages.corporate.biz.scheduler.service.SchedulerService;
+import com.codeages.corporate.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
 import org.springframework.context.ApplicationContext;

@@ -1,9 +1,9 @@
-package com.codeages.javaskeletonserver.biz.objectlog.service.impl;
+package com.codeages.corporate.biz.objectlog.service.impl;
 
-import com.codeages.javaskeletonserver.biz.objectlog.entity.ObjectLog;
-import com.codeages.javaskeletonserver.biz.objectlog.repository.ObjectLogRepository;
-import com.codeages.javaskeletonserver.biz.objectlog.service.ObjectLogService;
-import com.codeages.javaskeletonserver.security.SecurityContext;
+import com.codeages.corporate.biz.objectlog.entity.ObjectLog;
+import com.codeages.corporate.biz.objectlog.repository.ObjectLogRepository;
+import com.codeages.corporate.biz.objectlog.service.ObjectLogService;
+import com.codeages.corporate.security.SecurityContext;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;

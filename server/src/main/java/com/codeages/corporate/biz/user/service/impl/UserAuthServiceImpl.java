@@ -1,22 +1,22 @@
-package com.codeages.javaskeletonserver.biz.user.service.impl;
+package com.codeages.corporate.biz.user.service.impl;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.codeages.javaskeletonserver.biz.ErrorCode;
-import com.codeages.javaskeletonserver.biz.user.dto.LoginParams;
-import com.codeages.javaskeletonserver.biz.user.dto.UserAuthedDto;
-import com.codeages.javaskeletonserver.biz.user.entity.Role;
-import com.codeages.javaskeletonserver.biz.user.entity.User;
-import com.codeages.javaskeletonserver.biz.user.entity.UserRole;
-import com.codeages.javaskeletonserver.biz.user.repository.RoleRepository;
-import com.codeages.javaskeletonserver.biz.user.repository.UserRepository;
-import com.codeages.javaskeletonserver.biz.user.repository.UserRoleRepository;
-import com.codeages.javaskeletonserver.biz.user.service.UserAuthService;
-import com.codeages.javaskeletonserver.config.AppConfig;
-import com.codeages.javaskeletonserver.exception.AppException;
+import com.codeages.corporate.biz.ErrorCode;
+import com.codeages.corporate.biz.user.dto.LoginParams;
+import com.codeages.corporate.biz.user.dto.UserAuthedDto;
+import com.codeages.corporate.biz.user.entity.Role;
+import com.codeages.corporate.biz.user.entity.User;
+import com.codeages.corporate.biz.user.entity.UserRole;
+import com.codeages.corporate.biz.user.repository.RoleRepository;
+import com.codeages.corporate.biz.user.repository.UserRepository;
+import com.codeages.corporate.biz.user.repository.UserRoleRepository;
+import com.codeages.corporate.biz.user.service.UserAuthService;
+import com.codeages.corporate.config.AppConfig;
+import com.codeages.corporate.exception.AppException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.codeages</groupId>
-	<artifactId>java-skeleton-project</artifactId>
+	<artifactId>corporate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>java-skeleton-project</name>
-	<description>Java Skeleton Project</description>
+	<name>corporate</name>
+	<description>Corporate</description>
 	<properties>
 		<java.version>11</java.version>
 		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>

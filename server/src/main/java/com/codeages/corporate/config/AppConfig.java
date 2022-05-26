@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.config;
+package com.codeages.corporate.config;
 
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;

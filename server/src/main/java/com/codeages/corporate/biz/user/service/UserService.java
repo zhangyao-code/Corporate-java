@@ -1,6 +1,6 @@
-package com.codeages.javaskeletonserver.biz.user.service;
+package com.codeages.corporate.biz.user.service;
 
-import com.codeages.javaskeletonserver.biz.user.dto.*;
+import com.codeages.corporate.biz.user.dto.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

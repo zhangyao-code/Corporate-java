@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.common;
+package com.codeages.corporate.common;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;

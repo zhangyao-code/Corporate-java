@@ -1,8 +1,8 @@
-package com.codeages.javaskeletonserver.biz.queue.autoconfigure;
+package com.codeages.corporate.biz.queue.autoconfigure;
 
-import com.codeages.javaskeletonserver.biz.queue.annotation.QueueConsumeHandler;
-import com.codeages.javaskeletonserver.biz.queue.handler.ConsumeHandler;
-import com.codeages.javaskeletonserver.biz.queue.handler.ConsumeHandlerRegistry;
+import com.codeages.corporate.biz.queue.annotation.QueueConsumeHandler;
+import com.codeages.corporate.biz.queue.handler.ConsumeHandler;
+import com.codeages.corporate.biz.queue.handler.ConsumeHandlerRegistry;
 import org.springframework.aop.framework.AopProxyUtils;
 import org.springframework.aop.scope.ScopedProxyUtils;
 import org.springframework.beans.BeansException;

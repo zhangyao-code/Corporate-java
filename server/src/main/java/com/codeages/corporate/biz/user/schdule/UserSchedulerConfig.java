@@ -1,8 +1,8 @@
-package com.codeages.javaskeletonserver.biz.user.schdule;
+package com.codeages.corporate.biz.user.schdule;
 
-import com.codeages.javaskeletonserver.biz.scheduler.config.SystemSchedulerConfig;
-import com.codeages.javaskeletonserver.biz.scheduler.service.CronJobDeclare;
-import com.codeages.javaskeletonserver.biz.scheduler.service.IntervalJobDeclare;
+import com.codeages.corporate.biz.scheduler.config.SystemSchedulerConfig;
+import com.codeages.corporate.biz.scheduler.service.CronJobDeclare;
+import com.codeages.corporate.biz.scheduler.service.IntervalJobDeclare;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;

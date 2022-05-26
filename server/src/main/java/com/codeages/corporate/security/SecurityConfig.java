@@ -1,6 +1,6 @@
-package com.codeages.javaskeletonserver.security;
+package com.codeages.corporate.security;
 
-import com.codeages.javaskeletonserver.biz.user.service.UserAuthService;
+import com.codeages.corporate.biz.user.service.UserAuthService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;

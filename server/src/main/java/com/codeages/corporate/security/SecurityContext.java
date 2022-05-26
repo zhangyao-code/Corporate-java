@@ -1,4 +1,4 @@
-package com.codeages.javaskeletonserver.security;
+package com.codeages.corporate.security;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;

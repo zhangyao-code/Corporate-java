@@ -1,6 +1,6 @@
-package com.codeages.javaskeletonserver.security;
+package com.codeages.corporate.security;
 
-import com.codeages.javaskeletonserver.biz.user.dto.UserAuthedDto;
+import com.codeages.corporate.biz.user.dto.UserAuthedDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
